@@ -10,10 +10,10 @@
                     <img src="<%= q.gravatar %>" class="mr-3" alt="...">
                     <div class="media-body">
                         <h5 class="mt-0"><%= q.email %> asked:</h5>
-                        <div class="time">
+                        <div class="time hidden-xs">
                             <%= time_ago_in_words q.created_at %> ago
                         </div>
-                        <%= q.body %>
+                        <%= truncate q.body, length: 300 %>
                         <div>
                             <a href="<%= question_path(q) %>" class="btn btn-success btn-xs">View Answers</a>
                         </div>
